@@ -169,17 +169,17 @@ function Pools() {
                 <div className="flex w-full items-center justify-center text-2xl mt-2 pb-2 border-b-2">Liquidity</div>
                 <div className="flex flex-row space-x-4">
                     <input onChange = {(e) => setDepositAmount(e.target.value)} className="placeholder:text-slate-400 block bg-white w-full py-2 pl-2 pr-3 shadow-sm focus:outline-none focus:border-sky-500 focus:ring-sky-500 focus:ring-1 sm:text-sm" placeholder="Enter Amount to deposit" type="number" name="toAmount"/>       
-                    <button onClick={() => triggerDeposit()} className="rounded-lg px-6 py-4 bg-orange-600 hover:bg-orange-500 text-white">Deposit</button>
+                    <button onClick={() => triggerDeposit()} className="rounded-lg px-6 py-4 bg-green-600 hover:bg-green-500 text-white">Deposit</button>
                 </div>
                 <div className="flex flex-row space-x-4">
                     <input onChange = {(e) => setWithdrawAmount(e.target.value)} className="placeholder:text-slate-400 block bg-white w-full py-2 pl-2 pr-3 shadow-sm focus:outline-none focus:border-sky-500 focus:ring-sky-500 focus:ring-1 sm:text-sm" placeholder="Enter Amount to withdraw" type="number" name="toAmount"/>       
-                    <button onClick={() => triggerWithdraw()} className="rounded-lg px-6 py-4 bg-orange-600 hover:bg-orange-500 text-white">Withdraw</button>
+                    <button onClick={() => triggerWithdraw()} className="rounded-lg px-6 py-4 bg-green-600 hover:bg-green-500 text-white">Withdraw</button>
                 </div>
                 <div className="flex justify-between h-[100px] font-semibold text-lg items-center border-1 bg-gray-200 rounded-lg px-10">
                     <div>Total Staked: {totalStaked}</div>
                     <div>My Stake: {myStake}</div>
                 </div>
-                <div onClick={() => setViewPool(!viewPool)} className="rounded-lg flex w-full items-center justify-center text-xl mt-2 py-4 bg-orange-700 hover:bg-orange-600 text-white hover:cursor-pointer">Close</div>
+                <div onClick={() => setViewPool(!viewPool)} className="rounded-lg flex w-full items-center justify-center text-xl mt-2 py-4 bg-green-700 hover:bg-green-600 text-white hover:cursor-pointer">Close</div>
             </div>
         }
         {
@@ -192,8 +192,8 @@ function Pools() {
                             <div>{token.token}</div>
                         </div>
                         <div className="flex flex-row space-x-6"> 
-                            <button onClick={() => {setViewPool(!viewPool); setSelectPool(token); checkTotalUserStaked(token);}} className="rounded-lg bg-orange-600 hover:bg-orange-500 text-white p-4">Deposit</button>
-                            <button onClick={() => {setViewPool(!viewPool); setSelectPool(token); checkTotalUserStaked(token);}} className="rounded-lg bg-orange-600 hover:bg-orange-500 text-white p-4">Withdraw</button>
+                            <button onClick={() => {setViewPool(!viewPool); setSelectPool(token); checkTotalUserStaked(token);}} className="rounded-lg bg-green-600 hover:bg-green-500 text-white p-4">Deposit</button>
+                            <button onClick={() => {setViewPool(!viewPool); setSelectPool(token); checkTotalUserStaked(token);}} className="rounded-lg bg-green-600 hover:bg-green-500 text-white p-4">Withdraw</button>
                         </div>
                     </div>
                 </div>)}

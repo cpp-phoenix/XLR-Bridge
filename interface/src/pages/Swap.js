@@ -3,7 +3,7 @@ import { useEffect, useState } from 'react';
 import { useAlert, positions } from 'react-alert';
 import qs from 'qs';
 import { ethers, utils } from "ethers";
-import hashicoreabi from "../abis/hashicoreabi.json";
+import xlrcoreabi from "../abis/xlrcoreabi.json";
 
 function Swap() {
 
@@ -39,7 +39,7 @@ function Swap() {
             zeroX: "https://goerli.api.0x.org/",
             receiverContract: "0xf151df49884087a5075143a496a73bdf1e2be6fa",
             hashiPoolContract: "0xA67D503FaC6dA1A41F454D45Bebce7165c09F195",
-            domain: 5,
+            domain: "ethereum-2",
             tokens: [
                 {
                     token: "USDT",
@@ -66,7 +66,7 @@ function Swap() {
             zeroX: "https://mumbai.api.0x.org/",
             receiverContract: "0x32f80437bb4ce60e0ace378c32323b016545213e",
             hashiPoolContract: "0xf151dF49884087A5075143a496a73BDf1e2bE6fA",
-            domain: 80001,
+            domain: "Polygon",
             tokens: [
                 {
                     token: "USDT",
@@ -96,7 +96,7 @@ function Swap() {
             console.log(toChainId);
             const tokenTodd = {}
             chainObj[toChainId].tokens.filter(token => token.token === tokenTo.token).map(tokenObj => Object.assign(tokenTodd,tokenObj));
-            console.log(tokenTodd);
+            console.log(chainObj[toChainId].domain);
             setTokenTo(tokenTodd);
             
             const contract = new ethers.Contract(tokenFrom.address, erc20ABI, signer);
@@ -122,9 +122,9 @@ function Swap() {
                     });
                 }
             } else {
-                const hashiPoolContract = new ethers.Contract(chainObj[chain.id].receiverContract, hashicoreabi, signer);
+                const hashiPoolContract = new ethers.Contract(chainObj[chain.id].receiverContract, xlrcoreabi, signer);
                 try{
-                    txn = await hashiPoolContract.initiateBridge(chainObj[toChainId].domain, chainObj[toChainId].receiverContract, tokenTodd.address, tokenFrom.address, amount);
+                    txn = await hashiPoolContract.initiateBridge(chainObj[toChainId].domain, chainObj[toChainId].receiverContract, tokenTodd.address, tokenFrom.address, amount, { value: ethers.utils.parseUnits("700000", "gwei") });
                     console.log(txn);
                     alert.success(
                         <div>
@@ -261,7 +261,7 @@ function Swap() {
                         </div>
                     </div>
                 </div> */}
-                <button onClick={() => sendTransaction()} className="w-full rounded-b-lg text-xl text-white py-4 bg-orange-600">Initiate</button>
+                <button onClick={() => sendTransaction()} className="w-full rounded-b-lg text-xl text-white py-4 bg-green-600">Initiate</button>
             </div>
         }
         </div>
