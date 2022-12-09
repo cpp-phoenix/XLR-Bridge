@@ -189,9 +189,9 @@ function Swap() {
         <div className="flex flex-1 items-center justify-center h-5/6">
         {
             isConnected && 
-            <div className="flex flex-col justify-between rounded-lg font-semibold w-5/12 h-5/6 bg-white">
+            <div className="flex flex-col justify-between rounded-lg font-semibold w-4/12 h-4/6 bg-white">
                 <div className="text-2xl mx-4 mt-4">Bridge</div>
-                <div className="rounded-lg border-2 border-rounded h-[160px] mx-6 p-2">
+                <div className="rounded-lg border-2 border-rounded h-[120px] mx-6 p-2">
                     <div>
                         <div>From</div>
                         <div className="flex flex-row items-center h-[75px]">
@@ -218,7 +218,7 @@ function Swap() {
                         </div>
                     </div>
                 </div>
-                <div className="rounded-lg border-2 border-rounded h-[160px] mx-6 p-2">
+                <div className="rounded-lg border-2 border-rounded h-[120px] mx-6 p-2">
                     <div>
                         <div>To</div>
                         { toChainSelect && 
