@@ -62,6 +62,33 @@ function Pools() {
                     decimals: 18
                 }
             ]
+        },
+        1_287: {
+            chainId: 1_287,
+            chianName: "Moonbase Alpha",
+            explorer: "https://moonbase-blockscout.testnet.moonbeam.network/tx/",
+            rpc: "https://rpc.testnet.moonbeam.network",
+            zeroX: "https://mumbai.api.0x.org/",
+            receiverContract: "0x7ff62c41a99dcf968395cc47eaa5014efd9b3a4b",
+            hashiPoolContract: "0xd4B71e9D524FB4925c8C3044b45f5FdABbad976e",
+            domain: 1287,
+            tokens: [
+                {
+                    token: "USDT",
+                    address: "0x14c5f75466f4719d5d405e3ff0b7d181ce8ee1cc",
+                    decimals: 18
+                },
+                {
+                    token: "USDC",
+                    address: "0x2dEcD02F465E5e60B34598A2E0F2B0a2759377FD",
+                    decimals: 18
+                },
+                {
+                    token: "DAI",
+                    address: "0x9ad872caba5320ef0ed49a52f69a3d159525f485",
+                    decimals: 18
+                }
+            ]
         }
     }
 

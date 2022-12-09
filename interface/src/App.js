@@ -18,26 +18,28 @@ import Swap from './pages/Swap';
 import Pools from './pages/Pools';
 import Navbar from './components/Navbar';
 
-const bscChain = {
-  id: 97,
-  name: 'Binance',
-  network: 'bnb',
+const moonbase = {
+  id: 1287,
+  name: 'Moonbase Alpha',
+  network: 'moonbase',
+  iconUrl: 'https://moonscan.io/images/svg/brands/mainbrand-1.svg?v=22.11.5.0',
+  iconBackground: '#fff',
   nativeCurrency: {
     decimals: 18,
-    name: 'Binance',
-    symbol: 'BNB',
+    name: 'Moonbase Alpha',
+    symbol: 'DEV',
   },
   rpcUrls: {
-    default: 'https://data-seed-prebsc-1-s1.binance.org:8545',
+    default: 'https://rpc.testnet.moonbeam.network',
   },
   blockExplorers: {
-    default: { name: 'BscScan', url: 'https://testnet.bscscan.com' },
+    default: { name: 'Moonbase', url: 'https://moonbase.moonscan.io' },
   },
-  testnet: false,
+  testnet: true,
 };
 
 const { chains, provider } = configureChains(
-  [chain.goerli, chain.polygonMumbai],
+  [chain.goerli, chain.polygonMumbai, moonbase],
   [
     publicProvider()
   ]
