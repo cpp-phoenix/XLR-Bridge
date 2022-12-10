@@ -133,7 +133,7 @@ function Swap() {
             console.log(parseInt(amount,10));
             console.log(parseInt(allowed.toString(),10) < parseInt(amount,10));
             let txn;
-            if(parseInt(allowed.toString(),10) < parseInt(amount,10)) {
+            if(parseInt(allowed.toString(),18) < parseInt(amount,18)) {
                 try {
                     txn = await contract.approve(chainObj[chain.id].receiverContract, amount);
                     alert.success(

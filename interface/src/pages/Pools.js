@@ -124,7 +124,7 @@ function Pools() {
             const allowed = await contract.allowance(address, chainObj[chain.id].hashiPoolContract);
             let  amount = String(depositAmount * 10 ** selectPool.decimals);
             let txn;
-            if(allowed.toString() < amount) {
+            if(parseInt(allowed.toString(),18) < parseInt(amount,18)) {
                 try {
                     txn = await contract.approve(chainObj[chain.id].hashiPoolContract, amount);
                     alert.success(
